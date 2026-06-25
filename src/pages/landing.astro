@@ -1,0 +1,498 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<Layout title="OLMEWARE | Software a la Medida · México">
+  <main class="bg-[#0A0806] text-[#F0E4C8] overflow-x-hidden">
+    <!-- NAVBAR SECTION -->
+    <Navbar />
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO SECTION                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden lg:mt-10">
+
+      <!-- Aztec ambient grid -->
+      <div class="absolute inset-0 hero-grid opacity-20"></div>
+
+      <!-- Glowing orbs — jade + gold -->
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1B7A52] rounded-full blur-[140px] opacity-8 animate-pulse-slow"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#C9872A] rounded-full blur-[120px] opacity-6 animate-pulse-slow-2"></div>
+
+      <!-- Diagonal accent lines -->
+      <div class="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-[rgba(201,135,42,0.25)] to-transparent translate-x-[-180px]"></div>
+      <div class="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-[rgba(201,135,42,0.15)] to-transparent translate-x-[-240px]"></div>
+
+      <!-- Aztec corner brackets -->
+      <div class="absolute top-24 left-8 w-12 h-12 border-t border-l border-[rgba(201,135,42,0.5)]"></div>
+      <div class="absolute bottom-24 right-8 w-12 h-12 border-b border-r border-[rgba(201,135,42,0.5)]"></div>
+
+      <!-- Hero content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
+
+        <!-- Eyebrow label -->
+        <div class="inline-flex items-center gap-3 mb-8 px-4 py-2 border border-[rgba(201,135,42,0.35)] rounded-full bg-[rgba(201,135,42,0.06)] backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 bg-[#C9872A] rounded-full animate-ping-slow"></span>
+          <span class="text-[#C9872A] text-sm font-mono tracking-widest uppercase">Software a la Medida · México</span>
+        </div>
+
+        <!-- Main headline -->
+        <h1 class="hero-headline text-4xl md:text-8xl lg:text-[108px] font-black leading-[0.9] tracking-tight mb-6">
+          <span class="block text-[#F0E4C8]">Construimos</span>
+          <span class="block hero-gradient-text">software</span>
+          <span class="block text-[rgba(240,228,200,0.85)] text-5xl md:text-7xl lg:text-8xl font-light italic mt-2">que transforma</span>
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="max-w-2xl mx-auto mt-8 text-lg md:text-xl text-[#8A7560] leading-relaxed font-light">
+          Diseñamos y desarrollamos soluciones digitales únicas para empresas que necesitan más que una plantilla.
+          <span class="text-[rgba(240,228,200,0.75)]"> Tecnología precisa. Visión estratégica.</span>
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+          <a href="#contacto" class="group relative px-8 py-4 bg-[#1B7A52] text-[#F0E4C8] font-bold text-sm tracking-widest uppercase rounded-sm overflow-hidden transition-all duration-300 hover:bg-[#27A870] border border-[rgba(27,122,82,0.5)]">
+            <span class="relative z-10">Iniciar proyecto</span>
+          </a>
+          <a href="#servicios" class="group px-8 py-4 border border-[rgba(201,135,42,0.3)] text-[rgba(240,228,200,0.7)] font-medium text-sm tracking-widest uppercase rounded-sm hover:border-[rgba(201,135,42,0.7)] hover:text-[#C9872A] transition-all duration-300">
+            Ver servicios
+            <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 mt-20 pt-12 border-t border-[rgba(201,135,42,0.12)]">
+          <div class="text-center">
+            <span class="block text-3xl font-black text-[#F0E4C8]">+8</span>
+            <span class="text-xs text-[#8A7560] tracking-widest uppercase font-mono">Proyectos entregados</span>
+          </div>
+          <div class="w-px h-10 bg-[rgba(201,135,42,0.2)] hidden sm:block"></div>
+          <div class="text-center">
+            <span class="block text-3xl font-black text-[#F0E4C8]">2+</span>
+            <span class="text-xs text-[#8A7560] tracking-widest uppercase font-mono">Años de experiencia</span>
+          </div>
+          <div class="w-px h-10 bg-[rgba(201,135,42,0.2)] hidden sm:block"></div>
+          <div class="text-center">
+            <span class="block text-3xl font-black text-[#F0E4C8]">100%</span>
+            <span class="text-xs text-[#8A7560] tracking-widest uppercase font-mono">Código propio</span>
+          </div>
+          <div class="w-px h-10 bg-[rgba(201,135,42,0.2)] hidden sm:block"></div>
+          <div class="text-center">
+            <span class="block text-3xl font-black text-[#F0E4C8]">MX · US</span>
+            <span class="text-xs text-[#8A7560] tracking-widest uppercase font-mono">Clientes globales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        <span class="text-xs text-[#8A7560] font-mono tracking-widest uppercase">Scroll</span>
+        <div class="w-px h-8 bg-gradient-to-b from-[#8A7560] to-transparent scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SERVICES SECTION                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="servicios" class="relative py-32 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section header -->
+        <div class="flex items-start justify-between mb-20 flex-wrap gap-8">
+          <div>
+            <span class="text-[#C9872A] font-mono text-sm tracking-widest uppercase">/ 01 — Servicios</span>
+            <h2 class="text-5xl md:text-6xl font-black mt-3 leading-tight text-[#F0E4C8]">
+              Lo que<br /><span class="text-[#8A7560] font-light italic">hacemos</span>
+            </h2>
+          </div>
+          <p class="max-w-sm text-[#8A7560] text-base leading-relaxed pt-2">
+            Cada solución es construida desde cero para adaptarse exactamente a los procesos y objetivos de tu negocio.
+          </p>
+        </div>
+
+        <!-- Services grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(201,135,42,0.08)] rounded-sm overflow-hidden">
+
+          <!-- Service 1 -->
+          <div class="group service-card bg-[#0A0806] p-8 hover:bg-[#170E08] transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(27,122,82,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="w-12 h-12 mb-6 flex items-center justify-center border border-[rgba(201,135,42,0.3)] rounded-sm bg-[rgba(201,135,42,0.05)] text-[#C9872A] group-hover:border-[rgba(201,135,42,0.7)] transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#F0E4C8]">Aplicaciones Web</h3>
+            <p class="text-[#8A7560] text-sm leading-relaxed">Plataformas robustas, escalables y seguras. Desde sistemas internos hasta productos SaaS listos para el mercado.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="group service-card bg-[#0A0806] p-8 hover:bg-[#170E08] transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(27,122,82,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="w-12 h-12 mb-6 flex items-center justify-center border border-[rgba(201,135,42,0.3)] rounded-sm bg-[rgba(201,135,42,0.05)] text-[#C9872A] group-hover:border-[rgba(201,135,42,0.7)] transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#F0E4C8]">Apps Móviles</h3>
+            <p class="text-[#8A7560] text-sm leading-relaxed">Experiencias nativas e híbridas para iOS y Android. Rendimiento real, diseño intuitivo y sincronización en tiempo real.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">React Native</span><span class="tag">Flutter</span><span class="tag">Swift</span>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="group service-card bg-[#0A0806] p-8 hover:bg-[#170E08] transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(27,122,82,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="w-12 h-12 mb-6 flex items-center justify-center border border-[rgba(201,135,42,0.3)] rounded-sm bg-[rgba(201,135,42,0.05)] text-[#C9872A] group-hover:border-[rgba(201,135,42,0.7)] transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#F0E4C8]">Sistemas ERP / CRM</h3>
+            <p class="text-[#8A7560] text-sm leading-relaxed">Automatiza y centraliza las operaciones de tu empresa con sistemas hechos exactamente para tus flujos de trabajo.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">Laravel</span><span class="tag">Django</span><span class="tag">MySQL</span>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="group service-card bg-[#0A0806] p-8 hover:bg-[#170E08] transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(27,122,82,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="w-12 h-12 mb-6 flex items-center justify-center border border-[rgba(201,135,42,0.3)] rounded-sm bg-[rgba(201,135,42,0.05)] text-[#C9872A] group-hover:border-[rgba(201,135,42,0.7)] transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#F0E4C8]">Inteligencia Artificial</h3>
+            <p class="text-[#8A7560] text-sm leading-relaxed">Integración de modelos de lenguaje, visión computacional y machine learning aplicados a los procesos reales de tu negocio.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">OpenAI</span><span class="tag">Python</span><span class="tag">TensorFlow</span>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="group service-card bg-[#0A0806] p-8 hover:bg-[#170E08] transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(27,122,82,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="w-12 h-12 mb-6 flex items-center justify-center border border-[rgba(201,135,42,0.3)] rounded-sm bg-[rgba(201,135,42,0.05)] text-[#C9872A] group-hover:border-[rgba(201,135,42,0.7)] transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#F0E4C8]">Cloud & DevOps</h3>
+            <p class="text-[#8A7560] text-sm leading-relaxed">Infraestructura en la nube, pipelines de CI/CD, contenedores y monitoreo. Tu software siempre disponible y eficiente.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="group service-card bg-[#0A0806] p-8 hover:bg-[#170E08] transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(27,122,82,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="w-12 h-12 mb-6 flex items-center justify-center border border-[rgba(201,135,42,0.3)] rounded-sm bg-[rgba(201,135,42,0.05)] text-[#C9872A] group-hover:border-[rgba(201,135,42,0.7)] transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#F0E4C8]">APIs & Integraciones</h3>
+            <p class="text-[#8A7560] text-sm leading-relaxed">Conectamos tus sistemas existentes. Integraciones con pagos, facturación electrónica (SAT), logística y más.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">REST</span><span class="tag">GraphQL</span><span class="tag">CFDI</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HOW WE WORK SECTION                         -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="proceso" class="relative py-32 px-6 lg:px-12 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(27,122,82,0.04)] to-transparent pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="mb-20 text-center">
+          <span class="text-[#C9872A] font-mono text-sm tracking-widest uppercase">/ 02 — Proceso</span>
+          <h2 class="text-5xl md:text-6xl font-black mt-3 text-[#F0E4C8]">
+            Cómo <span class="text-[#8A7560] font-light italic">trabajamos</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-0 relative">
+          <div class="absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[rgba(201,135,42,0.3)] to-transparent hidden md:block"></div>
+
+          {[
+            { n: "01", title: "Descubrimiento", desc: "Entendemos tu negocio, metas y problemas antes de escribir una sola línea de código." },
+            { n: "02", title: "Diseño & Arquitectura", desc: "Prototipamos la solución y definimos la arquitectura técnica más adecuada." },
+            { n: "03", title: "Desarrollo Iterativo", desc: "Construimos en sprints con entregas parciales. Tú siempre ves el avance real." },
+            { n: "04", title: "Lanzamiento & Soporte", desc: "Desplegamos, capacitamos y seguimos contigo después del go-live." },
+          ].map(step => (
+            <div class="flex flex-col items-center text-center p-6 process-step">
+              <div class="relative w-16 h-16 flex items-center justify-center bg-[#170E08] border border-[rgba(201,135,42,0.4)] rounded-sm mb-6 z-10">
+                <span class="text-[#C9872A] font-black text-xl">{step.n}</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2 text-[#F0E4C8]">{step.title}</h3>
+              <p class="text-[#8A7560] text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- WHY US SECTION                              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="nosotros" class="relative py-32 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Left: large statement -->
+          <div>
+            <span class="text-[#C9872A] font-mono text-sm tracking-widest uppercase">/ 03 — Por qué OLMEWARE</span>
+            <h2 class="text-5xl md:text-6xl font-black mt-4 leading-tight text-[#F0E4C8]">
+              No somos<br />
+              <span class="text-transparent" style="-webkit-text-stroke: 1px rgba(240,228,200,0.25);">una agencia</span><br />
+              más.
+            </h2>
+            <p class="mt-6 text-[#8A7560] leading-relaxed">
+              Somos un equipo de ingenieros y estrategas de producto mexicanos que construyen software como si fuera nuestro propio negocio. Cada decisión técnica tiene un porqué de negocio detrás.
+            </p>
+
+            <div class="mt-10 space-y-4">
+              {[
+                { title: "Código 100% propio y entregado", desc: "El código fuente es tuyo desde el día uno. Sin dependencias ocultas ni licencias atrapadas." },
+                { title: "Comunicación directa y transparente", desc: "Sin intermediarios. Hablas directamente con los ingenieros que construyen tu producto." },
+                { title: "Experiencia en el mercado mexicano", desc: "Conocemos el ecosistema local: SAT, CFDI, regulaciones y las necesidades reales de empresas en México." },
+              ].map(item => (
+                <div class="flex items-start gap-4 p-4 border border-[rgba(201,135,42,0.08)] rounded-sm hover:border-[rgba(27,122,82,0.3)] transition-colors">
+                  <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center text-[#27A870] mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-[#F0E4C8] text-sm">{item.title}</h4>
+                    <p class="text-[#8A7560] text-sm mt-1">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Right: visual card -->
+          <div class="relative">
+            <div class="relative bg-gradient-to-br from-[#170E08] to-[#0A0806] border border-[rgba(201,135,42,0.15)] rounded-sm p-8 overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(201,135,42,0.5)] to-transparent"></div>
+
+              <div class="font-mono text-sm text-[#8A7560] mb-6">
+                <span class="text-[#C9872A]">olmeware</span>.tech / stack
+              </div>
+
+              <div class="space-y-3">
+                {[
+                  { label: "Frontend", badges: ["React", "Astro", "Next.js"] },
+                  { label: "Backend", badges: ["Node", "Python", "Laravel"] },
+                  { label: "Datos", badges: ["PostgreSQL", "MongoDB"] },
+                  { label: "Cloud", badges: ["AWS", "GCP", "Azure"] },
+                  { label: "Mobile", badges: ["Flutter", "RN"] },
+                ].map(row => (
+                  <div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs text-[#8A7560] uppercase tracking-widest font-mono">{row.label}</span>
+                      <div class="flex gap-2">
+                        {row.badges.map(b => <span class="stack-badge">{b}</span>)}
+                      </div>
+                    </div>
+                    <div class="h-px bg-[rgba(201,135,42,0.06)] mt-3"></div>
+                  </div>
+                ))}
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-[rgba(201,135,42,0.1)] flex items-center gap-3">
+                <span class="w-2 h-2 bg-[#27A870] rounded-full animate-pulse"></span>
+                <span class="text-xs text-[#8A7560] font-mono">Disponibles para nuevos proyectos · {currentYear}</span>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 border border-[rgba(201,135,42,0.1)] rounded-sm -z-10"></div>
+            <div class="absolute -top-4 -left-4 w-16 h-16 border border-[rgba(201,135,42,0.06)] rounded-sm -z-10"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CTA / CONTACT SECTION                       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="contacto" class="relative py-32 px-6 lg:px-12 overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#1B7A52] rounded-full blur-[160px] opacity-4"></div>
+
+      <div class="max-w-4xl mx-auto relative z-10 text-center">
+        <span class="text-[#C9872A] font-mono text-sm tracking-widest uppercase">/ 04 — Contacto</span>
+
+        <h2 class="text-5xl md:text-7xl font-black mt-4 leading-tight text-[#F0E4C8]">
+          ¿Listo para<br />
+          <span class="hero-gradient-text">construir</span> algo?
+        </h2>
+
+        <p class="mt-6 text-[#8A7560] text-lg max-w-xl mx-auto">
+          Cuéntanos sobre tu proyecto. Sin compromisos, sin vendehumos. Solo una conversación honesta sobre si podemos ayudarte.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <a href="mailto:hola@olmeware.tech" class="group flex flex-col items-center p-6 border border-[rgba(201,135,42,0.12)] rounded-sm hover:border-[rgba(27,122,82,0.4)] transition-all duration-300 bg-[rgba(255,255,255,0.01)]">
+            <div class="w-10 h-10 flex items-center justify-center text-[#C9872A] mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <span class="text-xs text-[#8A7560] uppercase tracking-widest font-mono mb-1">Email</span>
+            <span class="text-[#F0E4C8] text-sm font-medium group-hover:text-[#27A870] transition-colors">hola@olmeware.tech</span>
+          </a>
+
+          <a href="https://wa.me/5218448580335" class="group flex flex-col items-center p-6 border border-[rgba(201,135,42,0.12)] rounded-sm hover:border-[rgba(27,122,82,0.4)] transition-all duration-300 bg-[rgba(255,255,255,0.01)]">
+            <div class="w-10 h-10 flex items-center justify-center text-[#C9872A] mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <span class="text-xs text-[#8A7560] uppercase tracking-widest font-mono mb-1">WhatsApp</span>
+            <span class="text-[#F0E4C8] text-sm font-medium group-hover:text-[#27A870] transition-colors">Escríbenos ahora</span>
+          </a>
+
+          <a href="/contacto" class="group flex flex-col items-center p-6 border border-[rgba(201,135,42,0.12)] rounded-sm hover:border-[rgba(27,122,82,0.4)] transition-all duration-300 bg-[rgba(255,255,255,0.01)]">
+            <div class="w-10 h-10 flex items-center justify-center text-[#C9872A] mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <span class="text-xs text-[#8A7560] uppercase tracking-widest font-mono mb-1">Llamada</span>
+            <span class="text-[#F0E4C8] text-sm font-medium group-hover:text-[#27A870] transition-colors">Agendar reunión</span>
+          </a>
+        </div>
+
+        <div class="mt-10">
+          <a href="mailto:hola@olmeware.tech" class="inline-flex items-center gap-3 px-10 py-5 bg-[#1B7A52] text-[#F0E4C8] font-black text-sm tracking-widest uppercase rounded-sm hover:bg-[#27A870] transition-colors duration-300 border border-[rgba(27,122,82,0.5)]">
+            Iniciar conversación
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <p class="mt-6 text-[#8A7560] text-xs font-mono">
+          olmeware.tech · Saltillo, Coahuila, México
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+    --jade: #27A870;
+    --gold: #C9872A;
+    --bg: #0A0806;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+  }
+
+  .hero-headline, h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, .tag, .stack-badge {
+    font-family: var(--font-mono);
+  }
+
+  /* Jade + gold gradient text */
+  .hero-gradient-text {
+    background: linear-gradient(135deg, #27A870 0%, #C9872A 50%, #27A870 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  /* Aztec grid background */
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(201,135,42,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,135,42,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.06; transform: scale(1); }
+    50% { opacity: 0.12; transform: scale(1.05); }
+  }
+  @keyframes pulse-slow-2 {
+    0%, 100% { opacity: 0.04; transform: scale(1.05); }
+    50% { opacity: 0.10; transform: scale(1); }
+  }
+  @keyframes ping-slow {
+    0% { transform: scale(1); opacity: 1; }
+    75%, 100% { transform: scale(2); opacity: 0; }
+  }
+  @keyframes scroll-line {
+    0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); }
+    100% { opacity: 0; transform: scaleY(1) translateY(100%); }
+  }
+
+  .animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
+  .animate-pulse-slow-2 { animation: pulse-slow-2 8s ease-in-out infinite; }
+  .animate-ping-slow { animation: ping-slow 2s cubic-bezier(0,0,0.2,1) infinite; }
+  .scroll-line { animation: scroll-line 2s ease-in-out infinite; }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: rgba(201, 135, 42, 0.8);
+    border: 1px solid rgba(201, 135, 42, 0.2);
+    border-radius: 2px;
+    background: rgba(201, 135, 42, 0.06);
+  }
+
+  .stack-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 10px;
+    color: rgba(240, 228, 200, 0.45);
+    border: 1px solid rgba(201, 135, 42, 0.1);
+    border-radius: 2px;
+    background: rgba(201, 135, 42, 0.04);
+  }
+
+  .service-card, .process-step {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .service-card.visible, .process-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  document.querySelectorAll('.service-card, .process-step').forEach(el => {
+    observer.observe(el);
+  });
+</script>

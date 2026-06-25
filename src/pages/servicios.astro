@@ -1,0 +1,157 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import WhatsappIcon from "../components/WhatsappIcon.astro";
+import SectionDivider from "../components/SectionDivider.astro";
+---
+
+<Layout title="Servicios | OLMEWARE">
+  <main class="bg-[#0A0806]">
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-20 px-6 md:px-20 lg:px-44 bg-gradient-to-b from-[#0A0806] via-[#0D1A0D] to-[#0A0806]">
+      <div class="absolute top-24 left-8 w-10 h-10 border-t border-l border-[rgba(201,135,42,0.4)]"></div>
+      <div class="absolute bottom-8 right-8 w-10 h-10 border-b border-r border-[rgba(201,135,42,0.4)]"></div>
+      <div class="max-w-3xl" data-reveal="up">
+        <span class="text-xs font-mono tracking-widest uppercase text-[#C9872A]">/ Portafolio de Servicios</span>
+        <h1 class="font-dm text-5xl md:text-7xl text-[#F0E4C8] mt-4 leading-tight">
+          Soluciones <span class="text-[#27A870]">a la medida</span>
+        </h1>
+        <p class="text-[#8A7560] mt-5 text-lg leading-relaxed max-w-xl">
+          Cada solución es construida desde cero para adaptarse exactamente a los procesos y objetivos de tu negocio.
+        </p>
+      </div>
+    </section>
+
+    <SectionDivider text="Servicios" />
+
+    <!-- Services grid -->
+    <section class="py-20 px-6 md:px-14 lg:px-20">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="mb-14">
+          <span class="text-xs font-bold tracking-[0.2em] text-[#C9872A] uppercase" data-reveal="fade">— Lo que hacemos —</span>
+          <h2 class="font-dm text-4xl md:text-5xl text-[#F0E4C8] mt-3" data-reveal="up" data-reveal-delay="0.1">Nuestros Servicios</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(201,135,42,0.06)] rounded-sm overflow-hidden" data-reveal-stagger="up" data-stagger-delay="0.06">
+          {[
+            {
+              title: "Desarrollo Web",
+              desc: "Plataformas robustas, escalables y seguras. Desde sistemas internos hasta productos SaaS listos para el mercado.",
+              techs: ["React", "Node.js", "PostgreSQL", "AWS"],
+              color: "#27A870", colorRgb: "39,168,112",
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
+            },
+            {
+              title: "Apps Móviles",
+              desc: "Experiencias nativas e híbridas para iOS y Android. Diseño intuitivo y sincronización en tiempo real.",
+              techs: ["React Native", "Flutter", "Supabase"],
+              color: "#C9872A", colorRgb: "201,135,42",
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>`,
+            },
+            {
+              title: "Sistemas ERP / CRM",
+              desc: "Automatiza y centraliza las operaciones de tu empresa con sistemas hechos para tus flujos de trabajo.",
+              techs: ["React", "Django", "MySQL", "REST API"],
+              color: "#E5A840", colorRgb: "229,168,64",
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>`,
+            },
+            {
+              title: "Inteligencia Artificial",
+              desc: "Modelos de lenguaje, visión computacional y ML aplicados a los procesos reales de tu negocio.",
+              techs: ["OpenAI", "Python", "TensorFlow", "LangChain"],
+              color: "#27A870", colorRgb: "39,168,112",
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/>`,
+            },
+            {
+              title: "Cloud & DevOps",
+              desc: "Infraestructura en la nube, CI/CD, contenedores y monitoreo. Tu software siempre disponible.",
+              techs: ["AWS", "Docker", "Terraform", "GitHub Actions"],
+              color: "#C9872A", colorRgb: "201,135,42",
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>`,
+            },
+            {
+              title: "Automatización IoT / IIoT",
+              desc: "Conectamos máquinas, sensores y sistemas para automatizar procesos industriales y reducir costos.",
+              techs: ["Python", "MQTT", "AWS IoT", "Raspberry Pi"],
+              color: "#8B6B4A", colorRgb: "139,107,74",
+              svg: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
+            },
+          ].map(s => (
+            <div
+              class="group svc-card bg-[#0A0806] p-8 hover:bg-[#170E08] transition-all duration-500 relative overflow-hidden"
+              style={`--sc: ${s.color}; --scr: ${s.colorRgb};`}
+              data-reveal-child
+            >
+              <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(var(--scr),0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="w-12 h-12 mb-6 flex items-center justify-center border border-[rgba(var(--scr),0.3)] rounded-sm bg-[rgba(var(--scr),0.05)] group-hover:border-[rgba(var(--scr),0.7)] transition-colors" style={`color:${s.color}`}>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={s.svg} />
+              </div>
+              <h3 class="font-dm text-xl text-[#F0E4C8] mb-3">{s.title}</h3>
+              <p class="text-[#8A7560] text-sm leading-relaxed mb-6">{s.desc}</p>
+              <div class="flex flex-wrap gap-2">
+                {s.techs.map(t => (
+                  <span class="svc-tag text-[0.68rem] font-semibold px-2.5 py-1 rounded border">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process section -->
+    <section class="relative py-24 px-6 md:px-14 lg:px-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(27,122,82,0.04)] to-transparent pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="mb-16 text-center">
+          <span class="text-xs font-mono tracking-widest uppercase text-[#C9872A]" data-reveal="fade">/ 02 — Proceso</span>
+          <h2 class="font-dm text-4xl md:text-5xl text-[#F0E4C8] mt-3" data-reveal="up" data-reveal-delay="0.1">
+            Cómo <span class="text-[#8A7560] font-normal italic">trabajamos</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-0 relative">
+          <div class="absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[rgba(201,135,42,0.3)] to-transparent hidden md:block"></div>
+          {[
+            { n: "01", title: "Descubrimiento",        desc: "Entendemos tu negocio, metas y problemas antes de escribir código." },
+            { n: "02", title: "Diseño & Arquitectura", desc: "Prototipamos la solución y definimos la arquitectura técnica idónea." },
+            { n: "03", title: "Desarrollo Iterativo",  desc: "Sprints con entregas parciales. Siempre ves el avance real." },
+            { n: "04", title: "Lanzamiento & Soporte", desc: "Desplegamos, capacitamos y seguimos contigo después del go-live." },
+          ].map(step => (
+            <div class="flex flex-col items-center text-center p-6" data-reveal="up" data-reveal-delay={`${parseInt(step.n) * 0.08}`}>
+              <div class="w-16 h-16 flex items-center justify-center bg-[#170E08] border border-[rgba(201,135,42,0.4)] rounded-sm mb-6 z-10">
+                <span class="text-[#C9872A] font-black text-xl font-dm">{step.n}</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2 text-[#F0E4C8]">{step.title}</h3>
+              <p class="text-[#8A7560] text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 text-center">
+      <span class="text-xs font-mono tracking-widest uppercase text-[#8A7560]" data-reveal="fade">¿Listo para empezar?</span>
+      <h2 class="font-dm text-4xl md:text-5xl text-[#F0E4C8] my-5" data-reveal="up" data-reveal-delay="0.1">
+        Cotiza tu proyecto
+      </h2>
+      <a href="/contacto" class="inline-flex items-center gap-3 px-10 py-4 bg-[#1B7A52] text-[#F0E4C8] font-bold text-sm tracking-widest uppercase rounded-sm hover:bg-[#27A870] transition-colors border border-[rgba(27,122,82,0.5)]" data-reveal="up" data-reveal-delay="0.2">
+        Hablar con nosotros →
+      </a>
+    </section>
+
+    <Footer />
+    <WhatsappIcon />
+  </main>
+</Layout>
+
+<style>
+  .svc-tag {
+    background: rgba(var(--scr), 0.08);
+    color: var(--sc);
+    border-color: rgba(var(--scr), 0.25);
+  }
+</style>

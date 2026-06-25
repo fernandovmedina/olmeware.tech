@@ -1,0 +1,96 @@
+---
+import "../styles/global.css";
+import CustomCursor from "../components/CustomCursor.astro";
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "OLMEWARE | Desarrollo de Software" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/small_icon_transparent.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content="OLMEWARE — Desarrollo de software a la medida, automatización de procesos e inteligencia artificial para empresas mexicanas." />
+  </head>
+  <body class="bg-[#0A0806] text-[#F0E4C8] font-sans">
+    <CustomCursor />
+    <Navbar />
+    <slot />
+  </body>
+</html>
+
+<!-- Global GSAP scroll-reveal system ─────────────────────────
+  Usage:
+    data-reveal="up|down|left|right|scale|fade"
+    data-reveal-delay="0.2"         (seconds)
+    data-reveal-duration="0.9"      (seconds)
+    data-reveal-stagger="up"        (on parent)
+    data-stagger-delay="0.1"        (on parent)
+    data-reveal-child               (on each child)
+──────────────────────────────────────────────────────────── -->
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const fromMap: Record<string, gsap.TweenVars> = {
+      up:    { y: 60,  opacity: 0 },
+      down:  { y: -60, opacity: 0 },
+      left:  { x: -70, opacity: 0 },
+      right: { x: 70,  opacity: 0 },
+      scale: { scale: 0.85, opacity: 0 },
+      fade:  { opacity: 0 },
+    };
+
+    document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => {
+      const dir  = el.dataset.reveal ?? "up";
+      const delay = parseFloat(el.dataset.revealDelay ?? "0");
+      const dur   = parseFloat(el.dataset.revealDuration ?? "0.9");
+      const from  = fromMap[dir] ?? fromMap.up;
+
+      gsap.fromTo(el, from, {
+        y: 0, x: 0, scale: 1, opacity: 1,
+        duration: dur, delay,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        },
+      });
+    });
+
+    document.querySelectorAll<HTMLElement>("[data-reveal-stagger]").forEach((parent) => {
+      const children = parent.querySelectorAll("[data-reveal-child]");
+      const dir = parent.dataset.revealStagger ?? "up";
+      const staggerDelay = parseFloat(parent.dataset.staggerDelay ?? "0.1");
+      const from = fromMap[dir] ?? fromMap.up;
+
+      gsap.fromTo(Array.from(children), from, {
+        y: 0, x: 0, scale: 1, opacity: 1,
+        duration: 0.75,
+        stagger: staggerDelay,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: parent,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+    });
+  });
+</script>
+
+<style>
+  *::-webkit-scrollbar { display: none; }
+</style>

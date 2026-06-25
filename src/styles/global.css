@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-dm:   "DM Serif Text", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Base ──────────────────────────────────────────────── */
+* {
+  cursor: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: clip; /* clip not hidden — hidden breaks ScrollTrigger pin */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0A0806;
+  color: #F0E4C8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── OLMEWARE color palette ─────────────────────────────── */
+:root {
+  --jade:         #1B7A52;
+  --jade-light:   #27A870;
+  --jade-dim:     rgba(27, 122, 82, 0.15);
+  --gold:         #C9872A;
+  --gold-light:   #E5A840;
+  --gold-dim:     rgba(201, 135, 42, 0.2);
+  --obsidian:     #0A0806;
+  --earth:        #170E08;
+  --parchment:    #F0E4C8;
+  --stone:        #8A7560;
+  --stone-dim:    rgba(138, 117, 96, 0.4);
+}
+
+/* ─── Form inputs (shared across pages) ─────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(240, 228, 200, 0.45);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(201, 135, 42, 0.2);
+  color: #F0E4C8;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgba(240, 228, 200, 0.2);
+}
+
+.form-input:focus {
+  border-color: var(--jade-light);
+  background: rgba(27, 122, 82, 0.05);
+}
+
+.submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.875rem 2rem;
+  background: var(--jade);
+  color: #F0E4C8;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(27, 122, 82, 0.5);
+  cursor: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: var(--jade-light);
+  transform: translateY(-2px);
+}
+
+/* ─── Contact chips ──────────────────────────────────────── */
+.contact-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.contact-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--jade-light);
+  flex-shrink: 0;
+}
+
+/* ─── Scrollbar hidden ───────────────────────────────────── */
+*::-webkit-scrollbar { display: none; }
+* { -ms-overflow-style: none; scrollbar-width: none; }

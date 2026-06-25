@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import WhatsappIcon from "../components/WhatsappIcon.astro";
+import SectionDivider from "../components/SectionDivider.astro";
+import sideOlmecaHead from "../assets/side_olmeca_head.png";
+---
+
+<Layout title="Quiénes Somos | OLMEWARE">
+  <main class="bg-[#0A0806]">
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-24 px-6 md:px-20 lg:px-44 bg-gradient-to-b from-[#0A0806] via-[#0D1A0D] to-[#0A0806] min-h-screen flex items-center">
+      <div class="absolute top-24 left-8 w-10 h-10 border-t border-l border-[rgba(201,135,42,0.4)]"></div>
+      <div class="absolute bottom-8 right-8 w-10 h-10 border-b border-r border-[rgba(201,135,42,0.4)]"></div>
+
+      <!-- Orb glow -->
+      <div class="absolute top-1/4 right-0 w-80 h-80 rounded-full bg-[radial-gradient(circle,rgba(201,135,42,0.1)_0%,transparent_70%)] pointer-events-none filter blur-3xl"></div>
+
+      <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left: text -->
+        <div data-reveal="left">
+          <span class="text-xs font-bold tracking-[0.2em] text-[#C9872A] uppercase mb-4 block">— Quiénes Somos —</span>
+          <h1 class="font-dm text-4xl md:text-5xl lg:text-6xl text-[#F0E4C8] leading-tight mb-6">
+            Tecnología mexicana<br />con <span class="text-[#27A870]">propósito</span>
+          </h1>
+          <p class="text-[#8A7560] text-base md:text-lg leading-relaxed mb-4 max-w-lg">
+            OLMEWARE es una empresa 100% mexicana de desarrollo de software a la medida y automatización de procesos. Nuestro nombre fusiona "Olmeca" con "Software", honrando la grandeza de las civilizaciones mesoamericanas que construyeron imperios con precisión e ingenio.
+          </p>
+          <p class="text-[#8A7560] text-base md:text-lg leading-relaxed mb-10 max-w-lg">
+            Especializados en soluciones personalizadas para empresas que buscan reducir costos, optimizar procesos y crecer con tecnología de última generación.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contacto" class="px-7 py-3.5 bg-[#1B7A52] text-[#F0E4C8] font-bold text-sm tracking-widest uppercase rounded-sm hover:bg-[#27A870] transition-colors border border-[rgba(27,122,82,0.5)]">
+              Contactar →
+            </a>
+            <a href="/proyectos" class="px-7 py-3.5 border border-[rgba(201,135,42,0.3)] text-[rgba(240,228,200,0.7)] font-medium text-sm tracking-widest uppercase rounded-sm hover:border-[rgba(201,135,42,0.6)] hover:text-[#C9872A] transition-all">
+              Ver Proyectos
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Olmeca head -->
+        <div class="flex justify-center lg:justify-end" data-reveal="right" data-reveal-delay="0.1">
+          <Image
+            src={sideOlmecaHead}
+            alt="OLMEWARE — Cabeza Olmeca"
+            width={460}
+            height={460}
+            class="w-auto max-h-[420px] object-contain drop-shadow-[0_0_60px_rgba(201,135,42,0.2)]"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats row -->
+    <section class="px-6 md:px-20 lg:px-44 py-12 border-t border-b border-[rgba(201,135,42,0.1)]">
+      <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-reveal-stagger="up" data-stagger-delay="0.08">
+        {[
+          { num: "3",       label: "Clientes activos" },
+          { num: "+$300K",  label: "MXN en proyectos" },
+          { num: "4",       label: "Proyectos entregados" },
+          { num: "40–70%",  label: "Mejora de eficiencia" },
+        ].map(s => (
+          <div data-reveal-child>
+            <p class="font-dm text-3xl md:text-4xl text-[#C9872A]">{s.num}</p>
+            <p class="text-xs text-[#8A7560] tracking-widest uppercase font-mono mt-1">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <SectionDivider text="Nuestros Valores" />
+
+    <!-- Values grid -->
+    <section class="py-20 px-6 md:px-14 lg:px-20">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-14">
+          <span class="text-xs font-bold tracking-[0.2em] text-[#C9872A] uppercase" data-reveal="fade">— Filosofía —</span>
+          <h2 class="font-dm text-4xl md:text-5xl text-[#F0E4C8] mt-3" data-reveal="up" data-reveal-delay="0.1">
+            Lo que nos define
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" data-reveal-stagger="up" data-stagger-delay="0.07">
+          {[
+            { title: "Razón y Justicia",       desc: "Transparencia, respeto y equidad en cada interacción con clientes y colaboradores.", color: "#27A870", colorRgb: "39,168,112",  icon: "⚖️" },
+            { title: "Talento Humano",          desc: "Valoramos el desarrollo profesional y el crecimiento personal de cada integrante del equipo.", color: "#C9872A", colorRgb: "201,135,42", icon: "🧠" },
+            { title: "Seguridad",               desc: "Protección de la información y los activos críticos de nuestros clientes como prioridad.", color: "#E5A840", colorRgb: "229,168,64", icon: "🛡️" },
+            { title: "Puntualidad",             desc: "Cumplimiento de plazos y entregas eficientes, sin excusas.", color: "#27A870", colorRgb: "39,168,112", icon: "⏱️" },
+            { title: "Creatividad",             desc: "Pensamiento innovador aplicado a cada problema. No repetimos soluciones genéricas.", color: "#C9872A", colorRgb: "201,135,42", icon: "💡" },
+            { title: "Prontitud a la Acción",   desc: "Respondemos rápido y actuamos con decisión ante las necesidades del cliente.", color: "#8B6B4A", colorRgb: "139,107,74", icon: "⚡" },
+          ].map(v => (
+            <div
+              class="value-card relative rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] overflow-hidden p-7 transition-all duration-300 hover:-translate-y-1"
+              style={`--vc: ${v.color}; --vcr: ${v.colorRgb};`}
+              data-reveal-child
+            >
+              <div class="value-wash" aria-hidden="true"></div>
+              <div class="relative z-10">
+                <span class="text-3xl mb-4 block">{v.icon}</span>
+                <h3 class="font-dm text-xl text-[#F0E4C8] mb-3">{v.title}</h3>
+                <p class="text-sm text-[#8A7560] leading-relaxed">{v.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+    <WhatsappIcon />
+  </main>
+</Layout>
+
+<style>
+  .value-wash {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 80% 70% at 110% 120%, rgba(var(--vcr), 0.12) 0%, transparent 65%);
+    opacity: 0.6; transition: opacity 0.3s;
+  }
+  .value-card:hover .value-wash { opacity: 1; }
+  .value-card:hover { border-color: rgba(var(--vcr), 0.35); }
+</style>

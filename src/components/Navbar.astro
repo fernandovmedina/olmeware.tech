@@ -1,0 +1,335 @@
+---
+import Image from "astro/components/Image.astro";
+import logoTransparent from "../assets/logo_bg_transparent.png";
+
+const pathname = Astro.url.pathname;
+
+const links = [
+  { label: "Quiénes Somos", href: "/sobre_nosotros" },
+  { label: "Servicios",     href: "/servicios" },
+  { label: "Proyectos",     href: "/proyectos" },
+];
+---
+
+<header id="nav" class="nav-header opacity-0">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/" class="nav-logo">
+      <Image src={logoTransparent} alt="OLMEWARE" width={140} height={36} />
+    </a>
+
+    <!-- Desktop links -->
+    <nav class="nav-links-desktop" aria-label="Navegación principal">
+      <ul class="nav-list">
+        {links.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`nav-link ${pathname.startsWith(link.href) ? "active" : ""}`}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href="/contacto" class="nav-cta">
+        Solicitar Demo
+      </a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button id="menuToggle" class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <svg viewBox="0 0 12 10" class="hamburger" height="32px" width="32px">
+        <path d="M10,2 L2,2"  class="bar-1" stroke="#F0E4C8" stroke-width="0.6" fill="none"/>
+        <path d="M2,5 L10,5" class="bar-2" stroke="#F0E4C8" stroke-width="0.6" fill="none"/>
+        <path d="M10,8 L2,8" class="bar-3" stroke="#F0E4C8" stroke-width="0.6" fill="none"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-bg"></div>
+  <nav class="mobile-menu-nav">
+    <ul class="mobile-menu-list">
+      {links.map((link, i) => (
+        <li class="mobile-menu-item" style={`--i: ${i};`}>
+          <a href={link.href} class="mobile-menu-link">
+            <span class="mobile-link-inner" data-clip={link.label}>{link.label}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a href="/contacto" class="mobile-cta-btn">Solicitar Demo ↗</a>
+  </nav>
+</div>
+
+<style>
+  .nav-header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease;
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav-header.scrolled {
+    background: rgba(10, 8, 6, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-color: rgba(201, 135, 42, 0.15);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3.5rem;
+  }
+
+  @media (max-width: 767px) {
+    .nav-inner { padding: 1rem 1.5rem; }
+  }
+
+  .nav-logo img { display: block; }
+
+  /* Desktop nav */
+  .nav-links-desktop {
+    display: none;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .nav-links-desktop { display: flex; }
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 0.75rem;
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: rgba(240, 228, 200, 0.5);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0.2rem; left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%; height: 1.5px;
+    background: #27A870;
+    border-radius: 999px;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-link:hover { color: #F0E4C8; }
+  .nav-link:hover::after { transform: translateX(-50%) scaleX(1); }
+  .nav-link.active { color: #27A870; }
+  .nav-link.active::after { transform: translateX(-50%) scaleX(1); background: #27A870; }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #27A870;
+    text-decoration: none;
+    padding: 0.45rem 1.1rem;
+    border-radius: 0.5rem;
+    border: 1.5px solid rgba(39, 168, 112, 0.4);
+    background: rgba(39, 168, 112, 0.08);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover {
+    background: rgba(39, 168, 112, 0.18);
+    border-color: rgba(39, 168, 112, 0.7);
+    color: #27A870;
+  }
+
+  /* Hamburger */
+  .nav-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .nav-hamburger { display: none; }
+  }
+
+  /* Mobile overlay */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu.open { opacity: 1; pointer-events: auto; }
+
+  .mobile-menu-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 8, 6, 0.95);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .mobile-menu.open .mobile-menu-bg { opacity: 1; }
+
+  .mobile-menu-nav {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .mobile-menu-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-menu-item { overflow: hidden; }
+
+  .mobile-menu-link { display: block; text-decoration: none; }
+
+  .mobile-link-inner {
+    display: block;
+    font-family: var(--font-dm);
+    font-size: clamp(2.5rem, 9vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(240, 228, 200, 0.6);
+    transform: translateY(110%);
+    transition: -webkit-text-stroke 0.25s;
+    position: relative;
+  }
+
+  .mobile-link-inner::before {
+    content: attr(data-clip);
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #27A870, #C9872A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px;
+    height: 0%;
+    overflow: hidden;
+    transition: height 0.35s ease;
+  }
+
+  .mobile-menu-link:hover .mobile-link-inner::before { height: 100%; }
+
+  .mobile-cta-btn {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(240, 228, 200, 0.4);
+    text-decoration: none;
+    border: 1px solid rgba(240, 228, 200, 0.15);
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    transition: color 0.2s, border-color 0.2s;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .mobile-cta-btn:hover {
+    color: #27A870;
+    border-color: rgba(39, 168, 112, 0.5);
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const header     = document.getElementById("nav")!;
+    const menuToggle = document.getElementById("menuToggle")!;
+    const mobileMenu = document.getElementById("mobile-menu")!;
+    const mobileItems = mobileMenu.querySelectorAll<HTMLElement>(".mobile-link-inner");
+    const mobileBtn   = mobileMenu.querySelector<HTMLElement>(".mobile-cta-btn")!;
+
+    // Reveal navbar (no loader, just fade in)
+    gsap.to(header, { opacity: 1, duration: 0.6, delay: 0.2 });
+
+    // Blur on scroll
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+
+    // Hamburger paths
+    const barTl = gsap.timeline({ paused: true });
+    barTl
+      .to(".bar-1", { duration: 0.4, attr: { d: "M8,2 L2,8" }, x: 1, ease: "power2.inOut" }, "s")
+      .to(".bar-2", { duration: 0.4, autoAlpha: 0 }, "s")
+      .to(".bar-3", { duration: 0.4, attr: { d: "M8,8 L2,2" }, x: 1, ease: "power2.inOut" }, "s");
+    barTl.reverse();
+
+    let menuOpen = false;
+
+    function openMenu() {
+      menuOpen = true;
+      mobileMenu.classList.add("open");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      menuToggle.setAttribute("aria-expanded", "true");
+      barTl.play();
+      gsap.fromTo(Array.from(mobileItems), { y: "110%" }, {
+        y: "0%", duration: 0.65, stagger: 0.08, ease: "power3.out", delay: 0.15,
+      });
+      gsap.to(mobileBtn, { opacity: 1, y: 0, duration: 0.5, delay: 0.6, ease: "power2.out" });
+    }
+
+    function closeMenu() {
+      menuOpen = false;
+      barTl.reverse();
+      gsap.to(Array.from(mobileItems), { y: "110%", duration: 0.4, stagger: 0.05, ease: "power2.in" });
+      gsap.to(mobileBtn, { opacity: 0, y: 20, duration: 0.3, ease: "power2.in" });
+      setTimeout(() => {
+        mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }, 450);
+    }
+
+    menuToggle.addEventListener("click", () => menuOpen ? closeMenu() : openMenu());
+  });
+</script>
